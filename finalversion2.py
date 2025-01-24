@@ -108,9 +108,9 @@ def send_results(message):
 def send_student_scores(message):
     low_scores = analyze_student_scores()
     if not low_scores:
-        response_message = "Все студенты имеют общий балл 3 или выше(g=по 12-бальной системе)."
+        response_message = "Все студенты имеют общий балл 3 или выше(по 12-бальной системе)."
     else:
-        response_message = "Студенты с общим баллом меньше 3:\n"
+        response_message = "Студенты с общим баллом меньше 3(по 12-и бальной системе):\n"
         for result in low_scores:
             response_message += f"ФИО: {result['FIO']}, Общий балл: {result['Average score']}\n"
     
