@@ -55,7 +55,7 @@ def analyze_student_scores():
     df = pd.read_excel(file_path2)
     results = []
     for index, row in df.iloc[0:453].iterrows():
-        if row['Average score'] !='-' and row['Average score']<3:
+        if row['Average score'] !='-' and row['Average score']<4:
             results.append({
                 'FIO': row['FIO'],
                 'Average score': row['Average score']
@@ -108,7 +108,7 @@ def send_results(message):
 def send_student_scores(message):
     low_scores = analyze_student_scores()
     if not low_scores:
-        response_message = "Все студенты имеют общий балл 3 или выше."
+        response_message = "Все студенты имеют общий балл 3 или выше(g=по 12-бальной системе)."
     else:
         response_message = "Студенты с общим баллом меньше 3:\n"
         for result in low_scores:
