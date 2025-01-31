@@ -1,2 +1,2 @@
-# TGbot
+# KYS
 [deleted] kys
